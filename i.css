@@ -1,0 +1,114 @@
+html {
+    height: 100%;
+    background: linear-gradient(135deg, rgb(151, 255, 46), #ff4e95);
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: transparent;
+    margin: 0;
+}
+
+.stopwatch {
+    text-align: center;
+    background: rgba(255, 236, 236, 0.362); /* White with 50% opacity */
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+    backdrop-filter: blur(10px); /* Blur the background */
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stopwatch:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+#display {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text for better readability */
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#startStopBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#startStopBtn:hover {
+    background-color: #4aff72;
+    transform: translateY(-3px);
+}
+
+#resetBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #c82333;
+    transform: translateY(-3px);
+}
+
+#lapBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+#lapBtn:hover {
+    background-color: #0069d9;
+    transform: translateY(-3px);
+}
+
+.laps-container {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+    background: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    backdrop-filter: blur(10px); /* Blur the background */
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Initially hidden */
+}
+
+.laps-container.show {
+    display: block; /* Show when class 'show' is added */
+}
+
+.laps-container h2 {
+    margin-top: 0;
+    color: #333; /* Dark text for better readability */
+}
+
+.lap {
+    font-size: 18px;
+    margin: 5px 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lap.show {
+    opacity: 1;
+    transform: translateX(0);
+}
